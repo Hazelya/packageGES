@@ -4,26 +4,3 @@
 [build-system]
 requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"
-
-
-# Il faut une section project
-
-[project]
-name = "packageGES"  # Nom du package
-version = "0.1.0"  # Version
-description = "Un package pour calculer l'impact carbone des transports"
-authors = [{name = "Hazelya"}]
-license = {text = "MIT"}
-dependencies = ["pandas", "openpyxl"]  # Dépendances nécessaires
-
-
-
-
-# Fichier à inclure car les fichiers excel ne sont pas directement installés
-
-[tool.setuptools]
-packages = ["packageGES"]
-include-package-data = true
-
-[tool.setuptools.package-data]
-"packageGES" = ["data/*.xlsx"]

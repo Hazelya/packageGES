@@ -8,7 +8,7 @@ setup(
         "pandas",
         "openpyxl"
     ],
-    include_package_data=True,
+    include_package_data=True, # Permet d'inclure des fichiers non-Python
     author="Ton Nom",
     author_email="ton.email@example.com",
     description="Un package Python pour calculer les GES",
@@ -22,3 +22,5 @@ setup(
     ],
     python_requires=">=3.7",
 )
+
+
