@@ -5,6 +5,3 @@
 requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"
 
-# inclure l'excel
-[tool.setuptools.package-data]
-"packageGES" = ["data/*.xlsx"]
