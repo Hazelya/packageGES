@@ -4,3 +4,15 @@
 [build-system]
 requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"
+
+
+
+
+# Fichier à inclure car les fichiers excel ne sont pas directement installés
+
+[tool.setuptools]
+packages = ["packageGES"]
+include-package-data = true
+
+[tool.setuptools.package-data]
+"packageGES" = ["data/*.xlsx"]
