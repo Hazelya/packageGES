@@ -1,0 +1,14 @@
+# Fichiers Python à ignorer
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Dossiers pour le build
+build/
+dist/
+*.egg-info/
+
+# les IDE
+.vscode/
+.idea/
