@@ -21,7 +21,7 @@ def calcul_emission(mode, distance_km):
         emissions = df.loc[df['mode_transport'] == mode, 'emissions']
 
         if not emissions.empty:
-            return (int(emissions.values[0]) / 10) * distance_km
+            return (int(emissions.values[0]) / 1000) * distance_km # divisé par mille pour passer en kg
         else:
             print(f"Erreur pour le mode {mode} : non trouvé dans le fichier.")
             return None
