@@ -18,13 +18,18 @@ def calcul_emission(mode, distance_km):
         df = pd.read_excel(file_path)
 
         # Récupérer les émissions
-        emission = df.loc[df['mode_transport'] == mode, 'emission_avec_constrution']
+        emission = df.loc[df['mode_transport'] == mode, 'emission_avec_construction']
         emission_sans_construction = df.loc[df['mode_transport'] == mode, 'emission_sans_construction']
 
         if not emission.empty and not emission_sans_construction.empty:
-            emission_km = int(emission.values[0]) * distance_km
-            pourcentage_sans_construction = (int(emission_sans_construction.values[0]) * distance_km) * 100 / emission_km
-            return emission_km, pourcentage_sans_construction # divisé par mille pour passer en kdét
+            emission_km = float(emission.values[0]) * distance_km
+
+            if float(emission_sans_construction.values[0]) != 0 :
+                pourcentage_sans_construction = (float(emission_sans_construction.values[0]) * distance_km) * 100 / emission_km
+            else:
+                pourcentage_sans_construction = 0
+
+            return emission_km, pourcentage_sans_construction
         else:
             print(f"Erreur pour le mode {mode} : non trouvé dans le fichier.")
             return None
